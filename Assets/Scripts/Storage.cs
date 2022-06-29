@@ -43,6 +43,7 @@ public class Storage : MonoBehaviour
     private void SpawnCoin()
     {
         GameObject created = Instantiate(coinPrefab, Camera.main.WorldToScreenPoint(transform.position), coinPrefab.transform.rotation, coinIcon.transform);
+        Debug.Log(Camera.main.WorldToScreenPoint(transform.position));
         created.transform.DOMove(coinIcon.transform.position, coinSpeed).
             OnComplete(() => {
                 countText.count++;
